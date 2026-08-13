@@ -70,8 +70,13 @@ def add_bias_column(X):
     X = np.concatenate((ones, X), axis=1)
     return X
 
-# Step 6 - prepare_design_matrix (not yet solved)
-# TODO: implement
+# Step 6 - prepare_design_matrix
+def prepare_design_matrix(X, mean, std):
+    # TODO: Standardize features then add the bias column to form the design matrix.
+    normalized = standardize_features(X, mean, std)
+
+    augmented = add_bias_column(normalized)
+    return augmented
 
 # Step 7 - predict_linear (not yet solved)
 # TODO: implement
