@@ -112,8 +112,12 @@ def normal_equation(X, y):
     # (XT.X) W = X.T y
     return np.linalg.solve(X.T @ X, X.T @ y)
 
-# Step 11 - initialize_weights (not yet solved)
-# TODO: implement
+# Step 11 - initialize_weights
+def initialize_weights(n_features, seed=None):
+    # TODO: Return (n_features,) weights sampled from N(0, 0.01)
+    if seed is not None:
+        np.random.seed(seed)
+    return np.random.normal(size = n_features, scale = 0.01, loc = 0)
 
 # Step 12 - gd_step (not yet solved)
 # TODO: implement
